@@ -1,0 +1,105 @@
+th {
+    padding: 2px 2px 2px 2px;
+}
+
+html {
+    padding-top: 50px;
+    display: table;
+    margin: auto;
+    background-color: rgb(29, 29, 29);
+}
+
+.grid {
+    padding: 20px 20px 20px 20px;
+    background: rgb(44, 50, 54);
+    border-radius: 20px;
+    box-shadow: 7px 7px #0D0D0F;
+}
+
+.display {
+    background-color: rgb(83, 89, 105);
+    height: 80px;
+    border-radius: 20px;
+    font-size: 30px;
+    font-family: verdana;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 20px;
+    line-height: 80px;
+    color: #140703;
+    box-shadow: inset 2px 2px rgb(39, 42, 49);
+    text-shadow: 1px 1px rgb(77, 59, 40);
+
+}
+
+.displaycontainer {
+    height: 100px;
+}
+
+button {
+    box-shadow: 2px 2px #1E2225;
+    height: 80px;
+    width: 80px;
+    border-radius: 20px;
+    border: 0;
+    cursor: pointer;
+    background-color: rgb(64, 69, 73);
+    color: #BEBEC0;
+    font-size: 30px;
+    font-family: Verdana;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    box-shadow: none;
+    height: 78px;
+    width: 78px;
+    font-size: 28px;
+    background-color: rgb(58, 63, 66);
+}
+
+.opbutton {
+    box-shadow: 2px 2px rgb(23, 25, 29);
+    height: 80px;
+    width: 80px;
+    border-radius: 20px;
+    border: 0;
+    cursor: pointer;
+    background-color: rgb(78, 83, 97);
+    color: 	#140703;
+    font-size: 30px;
+    font-family: Verdana;
+}
+
+.opbutton:focus {
+    outline: none;
+}
+
+.opbutton:active {
+    background-color: rgb(70, 74, 87);
+    box-shadow: none;
+    height: 78px;
+    width: 78px;
+    font-size: 28px;
+}
+
+.theme-changer {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    box-shadow: 2px 2px rgb(23, 26, 29);
+}
+
+.theme-changer:active {
+    height: 28px;
+    width: 28px;
+}
+
+.theme-container {
+    padding-top: 50px;
+}

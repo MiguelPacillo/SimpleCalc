@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lightmain.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div>
+        <table class="grid">
+            <tr class="displaycontainer">
+                <th colspan="4"><div class="display" id="display">0</div></th>
+            </tr>
+            <tr>
+                <th><button onclick="numBtns('7')">7</button></th>
+                <th><button onclick="numBtns('8')">8</button></th>
+                <th><button onclick="numBtns('9')">9</button></th>
+                <th><button class="opbutton" onclick="opBtns('/')">÷</button></th>
+            </tr>
+            <tr>
+                <th><button onclick="numBtns('4')">4</button></th>
+                <th><button onclick="numBtns('5')">5</button></th>
+                <th><button onclick="numBtns('6')">6</button></th>
+                <th><button class="opbutton" onclick="opBtns('*')">×</button></th>
+            </tr>
+            <tr>
+                <th><button onclick="numBtns('1')">1</button></th>
+                <th><button onclick="numBtns('2')">2</button></th>
+                <th><button onclick="numBtns('3')">3</button></th>
+                <th><button class="opbutton" onclick="opBtns('-')">-</button></th>
+            </tr>
+            <tr>
+                <th><button onclick="numBtns('0')">0</button></th>
+                <th><button class="opbutton" onclick=eraseBtn()>C</button></th>
+                <th><button class="opbutton" onclick=equalBtn()>=</button></th>
+                <th><button class="opbutton" onclick="opBtns('+')">+</button></th>
+            </tr>
+        </table>
+
+        <div class="theme-container">
+            <button onclick="window.location.href = 'darkcalculator.html'" class="theme-changer"></button>
+        </div>
+
+    </div>
+
+    <script>
+        var displayNum = "0";
+        var mathNum = undefined;
+        var erase = true;
+        var digits = undefined;
+        var opAgain = true;
+
+        document.getElementById("display").innerHTML = displayNum;
+
+        function numBtns(numKey) {
+            
+            digits = displayNum.toString().length;
+
+            if (digits <= 12) {
+
+                if (erase == true) {
+                    displayNum = "";
+                    erase = false;
+                }
+
+                displayNum += numKey;
+                document.getElementById("display").innerHTML = displayNum;
+                opAgain = true;
+            }
+        }
+
+        function opBtns(opKey) {
+
+            digits = displayNum.toString().length;
+
+            if (digits <= 12) {
+
+                if (opAgain == true) {
+                    displayNum += opKey;
+                    document.getElementById("display").innerHTML = displayNum;
+                    erase = false;
+                    opAgain = false;
+                }
+            }
+        }
+
+        function equalBtn() {
+
+            if (opAgain == true) {
+                mathNum = Math.round(eval(displayNum) * 100)/100;
+                displayNum = mathNum;
+
+                if (isNaN(displayNum) == true) {
+                    document.getElementById("display").innerHTML = "Error";
+                } else if (isFinite(displayNum) == false) {
+                    document.getElementById("display").innerHTML = "∞";
+                } else if (displayNum % 1 != 0) {
+                    document.getElementById("display").innerHTML = displayNum + " R";
+                } else {
+                    document.getElementById("display").innerHTML = displayNum;
+                } 
+                erase = true;
+            }
+        }
+
+        function eraseBtn() {
+            
+            displayNum = "0";
+            document.getElementById("display").innerHTML = displayNum;
+            erase = true;
+            opAgain = true;
+        }
+
+        
+    </script>
+</body>
+</html>
